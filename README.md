@@ -53,8 +53,10 @@ To "load" this script, execute the following command:
 
 Using the command line:
 
-* [Only one source file](example-1)
-* [Two source files](example-2)
+* Just one source file: [here](example-1)
+* Two cource files: [here](example-2)
+* Create and execute a JAR: [here](example-3)
+* Use a JAR as a library: [here](example-4)
 
 
 
