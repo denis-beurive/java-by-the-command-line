@@ -23,6 +23,15 @@ cd $env:ROOT_DIR
 javac -d .\class .\src\com\beurive\*
 ```
 
+or
+
+```powershell
+cd $env:ROOT_DIR
+javac -d .\class .\src\**\*.java
+```
+
+
+
 The result is:
 
 	$env:ROOT_DIR
