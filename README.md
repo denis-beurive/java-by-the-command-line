@@ -54,10 +54,9 @@ To "load" this script, execute the following command:
 Using the command line:
 
 * Just one source file: [here](example-1)
-* Two cource files: [here](example-2)
+* Two source files: [here](example-2)
 * Create and execute a JAR: [here](example-3)
 * Use a JAR as a library: [here](example-4)
-
-
-
+* Create a basic project for Maven: [here](example-5)
+* Add and use a library using Maven: [here](example-6)
 
