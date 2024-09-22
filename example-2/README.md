@@ -1,4 +1,4 @@
-# Example 2
+# Example 2: the project is made of 2 source files
 
 ## Compilation using the command line
 

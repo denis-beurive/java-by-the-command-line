@@ -1,4 +1,4 @@
-# Example 1
+# Example 1: the project is made of just one source file
 
 ## Compilation using the command line
 
@@ -29,8 +29,6 @@ or
 cd $env:ROOT_DIR
 javac -d .\class .\src\**\*.java
 ```
-
-
 
 The result is:
 

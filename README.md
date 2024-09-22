@@ -12,6 +12,8 @@ Maven: https://maven.apache.org/download.cgi
 
 Open a PowerShell terminal.
 
+> You can run the following command from a CMD console: `powershell`.
+
 Set the `JAVE_HOME` environment variable. Below, the PowerShell command to do that *locally* (in the current interpreter's window):
 
 	$env:JAVE_HOME = "C:\Users\denis\Documents\java\jdk-22.0.1"
@@ -43,11 +45,44 @@ You can put all these setup commands into a startup script. Below, the content o
 	$env:Path += ";C:\Users\denis\Documents\java\apache-maven-3.9.7\bin"
 	$env:ROOT_DIR=$PSScriptRoot
 
-To "load" this script, execute the following command:
+To "load" this script, execute the following command (from a CMD or a PoweShell terminal, for example):
 
 	powershell.exe -NoExit -ExecutionPolicy Bypass -File .\start.ps1
 
 > You can check the environment: `$env:Path; $env:JAVE_HOME; $env:ROOT_DIR`
+
+If you need to configure more than one environment, then you can adapt the script to make it handle your needs:
+
+	# Usage:
+	#
+	#    powershell.exe -NoExit -ExecutionPolicy Bypass -File .\start.ps1 [-env (env1|env2)]
+	# 
+	# Examples:
+	#
+	#    powershell.exe -NoExit -ExecutionPolicy Bypass -File .\start.ps1 -env env1
+	#    powershell.exe -NoExit -ExecutionPolicy Bypass -File .\start.ps1 -env env2
+
+	param([String]$env="env1") 
+
+	Write-Host ([string]::Format("env = {0}", $env))
+
+	if ($env -eq "env1") {
+		$env:JAVE_HOME = "C:\Users\denis\Documents\java\jdk-22.0.1"
+		$env:Path += ";C:\Users\denis\Documents\java\jdk-22.0.1\bin"
+		$env:Path += ";C:\Users\denis\Documents\java\apache-maven-3.9.7\bin"
+		$env:ROOT_DIR=$PSScriptRoot
+	} elseif ($env -eq "env2") {
+		$env:JAVE_HOME = "C:\Users\denis.beurive\Documents\java\jdk-23"
+		$env:Path += ";C:\Users\denis.beurive\Documents\java\jdk-23\bin"
+		$env:Path += ";C:\Users\denis.beurive\Documents\java\apache-maven-3.9.9\bin"
+		$env:ROOT_DIR=$PSScriptRoot	
+	} else {
+		Write-Host "==========================================================="
+		Write-Host ([string]::Format("Invalid environment ID `"{0}`"!", $env))
+		Write-Host "The environment is not set properly !!!"
+		Write-Host "==========================================================="
+		Exit
+	}
 
 # Compiling and executing
 
@@ -59,4 +94,6 @@ Using the command line:
 * Use a JAR as a library: [here](example-4)
 * Create a basic project for Maven: [here](example-5)
 * Add and use a library using Maven: [here](example-6)
+* Create a module: [here](example-7)
+* JavaFX simple: [here](example-8)
 

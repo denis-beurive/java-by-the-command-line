@@ -1,6 +1,6 @@
-# Example 5
+# Example 5: create a basic project for Maven
 
-URL: https://www.tutorialspoint.com/maven/maven_overview.htm
+URL: [https://www.tutorialspoint.com/maven/maven_overview.htm](https://www.tutorialspoint.com/maven/maven_overview.htm)
 
 Create a basic directory structure for the project:
 
@@ -13,7 +13,6 @@ mvn archetype:generate `
     "-DinteractiveMode=false"
 
 mvn dependency:resolve-plugins
-
 ```
 
 > Please note that:

@@ -1,4 +1,4 @@
-# Exemple 4
+# Exemple 4: use a JAR as a library
 
 This example shows how to use a JAR file as a library.
 

@@ -1,4 +1,4 @@
-# Example 3
+# Example 3: create and execute a JAR
 
 ## Compilation using the command line
 
@@ -23,7 +23,9 @@ Compilation:
 
 ### With the default Manifest
 
-A default manifest is created. **This manifest does not declare any main class**.
+A default manifest is created. **This manifest does not declare any `main` method** (the `main` method 
+is the application's entry point).
+Thus, if you want to "execute the JAR file", then you need to tell the JVM which class contains the `main` method.
 
 ```powershell
 cd $env:ROOT_DIR\class	
@@ -48,10 +50,14 @@ jar --create --file=app.jar .
 or
 
 ```powershell
+cd $env:ROOT_DIR\.. # for example
 jar --create --file=app.jar -C "$env:ROOT_DIR\class" org\beurive\World.class -C "$env:ROOT_DIR\class" com\beurive\HelloWorld.class
 ```
 
 > `-C`: _change directory to the specified path_.
+>
+> You note that the option "`-C`" is used twice (`-C "$env:ROOT_DIR\class" org\beurive\World.class -C "$env:ROOT_DIR\class" com\beurive\HelloWorld.class`).
+> This is not an error.
 >
 > List the content: `jar --verbose --list --file=.\app.jar`
 >
@@ -87,7 +93,7 @@ Manifest-Version: 1.0
 Created-By: 22.0.1 (Oracle Corporation)
 ```
 
-Execute the JAR file:
+"Execute" the JAR file:
 
 ```powershell
 java -cp .\app.jar com.beurive.HelloWorld
@@ -106,7 +112,7 @@ jar --extract --verbose --file=app.jar META-INF/MANIFEST.MF
 get-content META-INF/MANIFEST.MF
 ```
 
-Now you can execute the JAR without specifying the entry point:
+Now you can "execute" the JAR without specifying the entry point:
 
 ```powershell
 java -jar .\app.jar
@@ -143,7 +149,7 @@ Created-By: 22.0.1 (Oracle Corporation)
 Main-Class: com.beurive.HelloWorld
 ```
 
-Now you can execute the JAR without specifying the entry point:
+Now you can "execute" the JAR without specifying the entry point:
 
 ```powershell
 java -jar .\app.jar

@@ -1,6 +1,6 @@
-# Example 5
+# Example 6: add and use a library using Maven
 
-URL: https://www.tutorialspoint.com/maven/maven_overview.htm
+URL: [https://www.tutorialspoint.com/maven/maven_overview.htm](https://www.tutorialspoint.com/maven/maven_overview.htm)
 
 Create a basic directory structure for the project (see [example 5](../example-5)).
 
@@ -30,7 +30,7 @@ Add the depedency to the file `pom.xml`.
   </dependencies>
 ```
 
-> If necessary: `mvn dependency:resolve-plugins`
+> If necessary, execute the following command into the PowerShell terminal: `mvn dependency:resolve-plugins`
 
 Install the dependencies:
 
