@@ -74,9 +74,15 @@ The (compiled) application will be put under the directory `output/application`.
 
 ## Compile the module
 
-	javac -d output/modules --source-path src/modules src/modules/module-info.java src/modules/com/company/config/*.java src/modules/com/company/terminal/*.java
+	# PowerShell syntax (for UNIX shell: replace "`" by "\", for MSDOS: replace "`" by "^")
+	javac -d output/modules `
+	      --source-path src/modules `
+	      src/modules/module-info.java `
+	      src/modules/com/company/config/*.java src/modules/com/company/terminal/*.java
 
-of (using PowerShell to generate the paths to all `.java` files):
+> Replace `^` by `\` if you are using a UNIX shell instead of a Windows terminal.
+
+or (using PowerShell to generate the paths to all `.java` files):
 
 	&"javac" -d $env:ROOT_DIR\output\modules --source-path $env:ROOT_DIR\src\modules @(Get-ChildItem -Recurse -Path $env:ROOT_DIR\src\modules -Filter *.java).FullName
 
@@ -88,7 +94,14 @@ of (using PowerShell to generate the paths to all `.java` files):
 
 ## Compile the application
 
-	javac -d output/application --module-path output/modules --add-modules com.company.module --source-path src/application src/application/com/company/app/Main.java
+	# PowerShell syntax (for UNIX shell: replace "`" by "\", for MSDOS: replace "`" by "^")
+	javac -d output/application `
+	      --module-path output/modules `
+	      --add-modules com.company.module `
+	      --source-path src/application `
+	      src/application/com/company/app/Main.java
+
+> Replace `^` by `\` if you are using a UNIX shell instead of a Windows terminal.
 
 Please note that:
 
@@ -97,7 +110,11 @@ Please note that:
 
 ## Run the application
 
-java --class-path output/application --module-path output/modules --add-modules com.company.module com.company.app.Main
+	# PowerShell syntax (for UNIX shell: replace "`" by "\", for MSDOS: replace "`" by "^")
+	java --class-path output/application `
+	     --module-path output/modules `
+	     --add-modules com.company.module `
+	     com.company.app.Main
 
 Please note that:
 

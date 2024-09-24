@@ -1,0 +1,4 @@
+--patch-module
+org.company.module=_
+--add-reads
+org.company.module=ALL-UNNAMED
