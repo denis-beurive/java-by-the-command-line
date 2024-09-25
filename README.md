@@ -94,6 +94,14 @@ Using the command line:
 * Use a JAR as a library: [here](example-4)
 * Create a basic project for Maven: [here](example-5)
 * Add and use a library using Maven: [here](example-6)
-* Create a module: [here](example-7)
-* JavaFX simple: [here](example-8)
+* Create one module using Javac compiler directly: [here](example-7)
+* Create 2 modules using Javac compiler directly, one module depends on the other: [here](example-8)
+* Create a "Java module" using Maven: [example-9](example-9)
+* Using the Maven compiler and the assembly modules: [example-10](example-10)
+* Using JavaFX - very simple example: [example-11](example-11)
+* Using JavaFX with Maven - very simple example: [example-12](example-12)
+
+
+
+
 
