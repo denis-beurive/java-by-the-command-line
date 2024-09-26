@@ -36,5 +36,3 @@ if ($env -eq "env1") {
 	Exit
 }
 
-
-

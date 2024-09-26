@@ -101,6 +101,29 @@ Using the command line:
 * Using JavaFX - very simple example: [example-11](example-11)
 * Using JavaFX with Maven - very simple example: [example-12](example-12)
 
+# Good notes:
+
+* [Maven Exec Plugin: yhy should I use `exec:exec` to run Java when `exec:java` exists?](notes/note-exec-1.md)
+* [Configure the Maven Exec Plugin](notes/note-exec-2.md)
+* [Configure the Maven compiler plugin](notes/note-compiler-1.md)
+
+# Troubleshooting
+
+Execute in DEBUG mode:
+
+	mvn -X ...
+
+Check the package name for a given "`.class`" file:
+
+	javap -c .\App.class
+
+Show the class paths at compile time:
+
+	mvn dependency:build-classpath -DincludeScope=compile
+
+Show the class paths during tests:
+
+	mvn dependency:build-classpath -DincludeScope=test
 
 
 

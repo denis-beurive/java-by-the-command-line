@@ -24,21 +24,26 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.4.1</version>
+    </dependency>
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
-        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
+
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
@@ -58,9 +63,47 @@
             <debug>true</debug>
             <outputDirectory>${project.basedir}/target/classes</outputDirectory>
           </configuration>
+        </plugin>
 
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.4.1</version>
+            <configuration>
+                <executable>java</executable>
+                <arguments>
+                    <!--
+                     Set the class paths
+                     ===================
+
+                     <classpath/>: this will generate the classpath for us.
+
+                     Please note that you could set the option more than once in order to add additional class paths.
+                     -->
+                    <argument>--class-path</argument>  
+                    <classpath/>
+
+                    <!--
+                      Set paths to JavaFX modules
+                      ===========================
+
+                      <modulepath/>: automatically creates the modulepath using all project
+                                     dependencies, also adding the project build directory.
+                    -->
+                    <argument>--module-path</argument>
+                    <modulepath/> <!-- useless for this use case, but use it because it shows that we can set the option more than once -->
+                    <argument>--module-path</argument>
+                    <argument></argument> <!-- please note the "empty" <argument></argument>. -->
+                    <argument>${env.PATH_TO_FX}</argument>
+
+                    <argument>--add-modules</argument>
+                    <argument>javafx.controls</argument>
+                    <argument>org.company.App</argument>
+                </arguments>
+            </configuration>
 
         </plugin>
+
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
@@ -74,10 +117,12 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
+
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+
       </plugins>
     </pluginManagement>
   </build>
