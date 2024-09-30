@@ -1,0 +1,2 @@
+-p
+"C:\\Users\\denis.beurive\\Documents\\dev\\java-by-the-command-line\\example-13\\app\\application\\target\\classes;C:\\Users\\denis.beurive\\.m2\\repository\\org\\company\\org.company.module\\1.0-SNAPSHOT\\org.company.module-1.0-SNAPSHOT.jar;C:\\Users\\denis.beurive\\.m2\\repository\\org\\vendor\\org.vendor.module\\1.0-SNAPSHOT\\org.vendor.module-1.0-SNAPSHOT.jar;C:\\Users\\denis.beurive\\.m2\\repository\\junit\\junit\\3.8.1\\junit-3.8.1.jar"

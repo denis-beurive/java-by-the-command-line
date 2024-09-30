@@ -101,11 +101,13 @@ Using the command line:
 * Using JavaFX - very simple example: [example-11](example-11)
 * Using JavaFX with Maven - very simple example: [example-12](example-12)
 
-# Good notes:
+# Good notes
 
 * [Maven Exec Plugin: yhy should I use `exec:exec` to run Java when `exec:java` exists?](notes/note-exec-1.md)
 * [Configure the Maven Exec Plugin](notes/note-exec-2.md)
 * [Configure the Maven compiler plugin](notes/note-compiler-1.md)
+* [What is the difference in Maven between dependency and plugin tags in pom.xml?](https://stackoverflow.com/questions/11881663/what-is-the-difference-in-maven-between-dependency-and-plugin-tags-in-pom-xml)
+* Where to find projects' archetypes ? [https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-simple](https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-simple)
 
 # Troubleshooting
 
@@ -124,7 +126,3 @@ Show the class paths at compile time:
 Show the class paths during tests:
 
 	mvn dependency:build-classpath -DincludeScope=test
-
-
-
-

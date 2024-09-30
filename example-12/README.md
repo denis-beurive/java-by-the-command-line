@@ -25,14 +25,6 @@ First, you need to configure the environment as described in this document: [htt
 Configure the POM.XML file:
 
 ```xml
-  <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-maven-plugin</artifactId>
-      <version>0.0.8</version>
-  </dependency>
-```
-
-```xml
 	<plugin>
 		<artifactId>maven-compiler-plugin</artifactId>
 		<version>3.13.0</version>
@@ -46,9 +38,6 @@ Configure the POM.XML file:
     	<maven.compiler.target>23</maven.compiler.target>
 	</properties>
 ```
-
-
-
 
 We also need to tell the compiler (handled by the compiler plugin "`maven-compiler-plugin`") where to look for the JavaFX modules, and which modules to add:
 

@@ -26,4 +26,5 @@ or:
 	cd $env:ROOT_DIR\.. # for example
 	java -cp $env:ROOT_DIR\class --module-path $env:PATH_TO_FX --add-modules javafx.controls com.beurive.HelloFX
 
+> See: [Run HelloWorld using JavaFX SDK](https://openjfx.io/openjfx-docs/install-javafx)
 
