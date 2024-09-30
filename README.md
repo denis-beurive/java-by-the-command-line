@@ -72,10 +72,11 @@ If you need to configure more than one environment, then you can adapt the scrip
 		$env:Path += ";C:\Users\denis\Documents\java\apache-maven-3.9.7\bin"
 		$env:ROOT_DIR=$PSScriptRoot
 	} elseif ($env -eq "env2") {
-		$env:JAVE_HOME = "C:\Users\denis.beurive\Documents\java\jdk-23"
-		$env:Path += ";C:\Users\denis.beurive\Documents\java\jdk-23\bin"
-		$env:Path += ";C:\Users\denis.beurive\Documents\java\apache-maven-3.9.9\bin"
+		$env:JAVE_HOME = "C:\Users\denisb\Documents\java\jdk-23"
+		$env:Path += ";C:\Users\denisb\Documents\java\jdk-23\bin"
+		$env:Path += ";C:\Users\denisb\Documents\java\apache-maven-3.9.9\bin"
 		$env:ROOT_DIR=$PSScriptRoot	
+		$env:PATH_TO_FX="C:\Users\denisb\Documents\java\javafx-sdk-23\lib"
 	} else {
 		Write-Host "==========================================================="
 		Write-Host ([string]::Format("Invalid environment ID `"{0}`"!", $env))
@@ -100,10 +101,11 @@ Using the command line:
 * Using the Maven compiler and the assembly modules: [example-10](example-10)
 * Using JavaFX - very simple example: [example-11](example-11)
 * Using JavaFX with Maven - very simple example: [example-12](example-12)
+* Using "maven modules": [example-13](example-13)
 
 # Good notes
 
-* [Maven Exec Plugin: yhy should I use `exec:exec` to run Java when `exec:java` exists?](notes/note-exec-1.md)
+* [Maven Exec Plugin: why should I use `exec:exec` to run Java when `exec:java` exists?](notes/note-exec-1.md)
 * [Configure the Maven Exec Plugin](notes/note-exec-2.md)
 * [Configure the Maven compiler plugin](notes/note-compiler-1.md)
 * [What is the difference in Maven between dependency and plugin tags in pom.xml?](https://stackoverflow.com/questions/11881663/what-is-the-difference-in-maven-between-dependency-and-plugin-tags-in-pom-xml)
