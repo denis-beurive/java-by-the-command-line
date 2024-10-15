@@ -1,3 +1,5 @@
 *.class
 *.lst
 *.jar
+*.msi
+*.wxs
