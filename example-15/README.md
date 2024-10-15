@@ -1,4 +1,4 @@
-# Example 15: create and execute a JAR and build an MSI installer for it
+# Example 15: build an MSI installer with JPackage
 
 Let's take the simple Java application built from [example 3](../example-3).
 
@@ -53,7 +53,7 @@ OK, but we also need to set the `PATH` environment variable so that we can call 
     $MainJar="app.jar"
     $TempDir=([System.IO.Path]::GetTempPath()+'~'+([System.IO.Path]::GetRandomFileName())).Split('.')[0]
     "The temporary directory is: $TempDir"
-    
+
     jpackage --input . `
              --name ex15 `
              --main-jar "$MainJar" `
