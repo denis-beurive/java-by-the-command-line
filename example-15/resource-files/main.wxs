@@ -92,7 +92,7 @@
              a file in File Explorer -->
         <RegistryKey Root="HKCR" Key="*\shell\ex15" Action="create">
           <RegistryValue Type="string" Value="Exécuter ex15" KeyPath="yes" />
-          <!-- <RegistryValue Name="Icon" Type="string" Value="C:\\PRG.exe,0" /> -->
+          <RegistryValue Name="Icon" Type="string" Value="[INSTALLDIR]ex15.exe,0" />
         </RegistryKey>
 
         <!-- Specify the command to execute when the user selects the application in the context menu -->

@@ -201,3 +201,20 @@ Result:
 
 ![](doc/ex15-reg-query-1.png)
 
+# Bind an icon to the application
+
+    $MainClass="com.beurive.HelloWorld"
+    $MainJar="app.jar"
+
+    cd "$env:ROOT_DIR"
+
+    jpackage --input "package-files" `
+             --resource-dir "resource-files" `
+             --name ex15 `
+             --main-jar "$MainJar" `
+             --main-class "$MainClass" `
+             --win-console `
+             --type msi `
+             --temp temp `
+             --icon data\app.ico `
+             --verbose
