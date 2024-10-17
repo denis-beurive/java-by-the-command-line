@@ -203,6 +203,8 @@ Result:
 
 # Bind an icon to the application
 
+Just use the command line parameter `--icon`.
+
     $MainClass="com.beurive.HelloWorld"
     $MainJar="app.jar"
 
@@ -218,3 +220,55 @@ Result:
              --temp temp `
              --icon data\app.ico `
              --verbose
+
+# Add an entry in the start menu and, optionally, a desktop shortcut
+
+
+    $MainClass="com.beurive.HelloWorld"
+    $MainJar="app.jar"
+
+    cd "$env:ROOT_DIR"
+
+    jpackage --input "package-files" `
+             --resource-dir "resource-files" `
+             --name ex15 `
+             --main-jar "$MainJar" `
+             --main-class "$MainClass" `
+             --win-console `
+             --type msi `
+             --temp temp `
+             --icon data\app.ico `
+             --win-menu `
+             --win-menu-group "example 15" `
+             --win-shortcut-prompt `
+             --win-shortcut `
+             --verbose
+
+# Other customization
+
+    $MainClass="com.beurive.HelloWorld"
+    $MainJar="app.jar"
+
+    cd "$env:ROOT_DIR"
+
+    jpackage --input "package-files" `
+             --resource-dir "resource-files" `
+             --name ex15 `
+             --main-jar "$MainJar" `
+             --main-class "$MainClass" `
+             --win-console `
+             --type msi `
+             --temp temp `
+             --icon data\app.ico `
+             --win-menu `
+             --win-menu-group "example 15" `
+             --win-shortcut-prompt `
+             --win-shortcut `
+             --app-version "1.1.1" `
+             --description "This application illustrates the use of JPackage" `
+             --vendor "Examples corp" `
+             --copyright "GNU" `
+             --verbose
+
+
+
