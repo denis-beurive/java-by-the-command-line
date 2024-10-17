@@ -104,6 +104,8 @@ Using the command line:
 * Using "maven modules": [example-13](example-13)
 * Using JavaFX wth Maven - the Maven JavaFX Plugin: [example-14](example-14)
 * Build an MSI installer with JPackage: [example-15](example-15)
+* Build an MSI installer with JPackage for a JavaFX application: [example-16](example-16)
+
 
 # Good notes
 

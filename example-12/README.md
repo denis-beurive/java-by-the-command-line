@@ -1,4 +1,4 @@
-# Example 13: using the JavaFX Maven plugin
+# Example 12: using the JavaFX Maven plugin
 
 * [Maven repository](https://mvnrepository.com/artifact/org.openjfx/javafx-maven-plugin)
 

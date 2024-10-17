@@ -64,6 +64,7 @@ OK, but we also need to set the `PATH` environment variable so that we can call 
     mkdir "package-files"
     mv app.jar "package-files"
 
+    Remove-Item $env:ROOT_DIR\temp\* -Recurse -Force
     jpackage --input "package-files" `
              --name ex15 `
              --main-jar "$MainJar" `
@@ -147,6 +148,7 @@ Then rebuild the MSI installer. But this time, you set the path to the directory
 
     cd "$env:ROOT_DIR"
 
+    Remove-Item $env:ROOT_DIR\temp\* -Recurse -Force
     jpackage --input "package-files" `
              --resource-dir "resource-files" `
              --name ex15 `
@@ -210,6 +212,7 @@ Just use the command line parameter `--icon`.
 
     cd "$env:ROOT_DIR"
 
+    Remove-Item $env:ROOT_DIR\temp\* -Recurse -Force
     jpackage --input "package-files" `
              --resource-dir "resource-files" `
              --name ex15 `
@@ -229,6 +232,7 @@ Just use the command line parameter `--icon`.
 
     cd "$env:ROOT_DIR"
 
+    Remove-Item $env:ROOT_DIR\temp\* -Recurse -Force
     jpackage --input "package-files" `
              --resource-dir "resource-files" `
              --name ex15 `
@@ -251,6 +255,7 @@ Just use the command line parameter `--icon`.
 
     cd "$env:ROOT_DIR"
 
+    Remove-Item $env:ROOT_DIR\temp\* -Recurse -Force
     jpackage --input "package-files" `
              --resource-dir "resource-files" `
              --name ex15 `

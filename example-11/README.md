@@ -1,4 +1,4 @@
-# Example 10: using JavaFX - very simple example
+# Example 11: using JavaFX - very simple example
 
 ## Configure the environment
 
